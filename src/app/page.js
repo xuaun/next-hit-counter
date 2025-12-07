@@ -2,6 +2,8 @@ import React from "react";
 
 import { readFile, writeFile } from "../helpers/file-helpers";
 
+import ButtonCensored from "../components/ButtonCensored";
+
 const DATABASE_PATH = "/src/database.json";
 
 /*
@@ -28,7 +30,10 @@ function Home() {
   return (
     <main>
       <h1>Welcome!</h1>
-      <p>You are visitor number {db.hits}.</p>
+      <p>
+        You are visitor number{" "}
+        <ButtonCensored>{db.hits}</ButtonCensored>.
+      </p>
     </main>
   );
 }
